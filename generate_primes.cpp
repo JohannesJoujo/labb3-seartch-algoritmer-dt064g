@@ -22,10 +22,9 @@ void siev_of_e(size_t sz,std::vector<bool>&vec){
     }
 }
 
-
-
-std::vector<int> prime_num(size_t sz,std::vector<bool>&vec){
+std::vector<int> prime_num(std::vector<bool>&vec){
     std::vector<int> new_vec;
+    size_t sz=vec.size();
     siev_of_e(sz,vec);
     for (int i = 0; i <sz; i++) {
         if(vec[i]==true){

@@ -10,7 +10,7 @@
 
 void siev_of_e(size_t sz,std::vector<bool>&vec);
 
-std::vector<int> prime_num(size_t sz,std::vector<bool>&vec);
+std::vector<int> prime_num(std::vector<bool>&vec);
 
 
 #endif //SEARTCH_GENERATE_PRIMES_H

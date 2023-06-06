@@ -3,4 +3,4 @@ project(seartch)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(seartch main.cpp generate_primes.h generate_primes.cpp)
+add_executable(seartch main.cpp generate_primes.h generate_primes.cpp Binarysearch.h Binarysearch.cpp Sekvensiell_seartch.h Sekvensiell_seartch.cpp Node.h Binary_seartch_tree.h Binary_seartch_tree.cpp)
