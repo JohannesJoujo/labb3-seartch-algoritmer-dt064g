@@ -3,13 +3,14 @@
 #include "Sekvensiell_seartch.h"
 #include "Binarysearch.h"
 #include "Binary_seartch_tree.h"
-
+#include "Hash_table.h"
 void sekvensiell_seartch_test(std::vector<int>&prime_vector, int target);
 void binary_seartch_test(std::vector<int>&prime_vector, int target);
 void BST_test(Node*root,int target);
-
+void free_mem(std::vector<node*> hashtable,size_t reserved_size);
 int main() {
-    std::vector<bool>vec(100, true);
+    int size_of_vec=100;
+    std::vector<bool>vec(size_of_vec, true);
     for (int i = 0; i < vec.size(); i++) {
         vec[i]=true;
         std::cout<< vec[i];
@@ -44,6 +45,21 @@ int main() {
 */
 
 
+std::cout<<"\n\nHash table:\n\n";
+    size_t reserved_size = 100;
+    std::vector<node*> hashtable(reserved_size, nullptr);
+    insertSortedVector(prime_vector, hashtable, reserved_size);
+
+    int searchKey = 71;
+
+    bool found = search(hashtable, searchKey, reserved_size);
+    if (found) {
+        std::cout << "Element " << searchKey << " found in the hash table." << std::endl;
+    } else {
+        std::cout << "Element " << searchKey << " not found in the hash table." << std::endl;
+    }
+    //display(hashtable, reserved_size);
+    free_mem(hashtable,reserved_size);
     return 0;
 }
 
@@ -71,5 +87,16 @@ void BST_test(Node*root,int target){
         std::cout << "\n\nElement " << target << " found in the binary search tree.\n\n" << std::endl;
     } else {
         std::cout << "\n\nElement " << target << " not found in the binary search tree.\n\n" << std::endl;
+    }
+}
+
+void free_mem(std::vector<node*> hashtable,size_t reserved_size){
+    for (size_t i = 0; i < reserved_size; i++) {
+        node* curr = hashtable[i];
+        while (curr != nullptr) {
+            node* temp = curr;
+            curr = curr->next;
+            delete temp;
+        }
     }
 }
