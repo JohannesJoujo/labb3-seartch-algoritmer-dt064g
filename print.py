@@ -79,7 +79,8 @@ plt.errorbar(N_sekventiell_seartch, T_sekventiell_seartch, yerr=Stdev_sekventiel
 plt.xlabel('N')
 plt.ylabel('Time [ms]')
 plt.title('sekventiell search')
-plt.ylim(bottom=0)
+plt.ylim(-0.5)
+# plt.ylim(bottom=0)
 
 # Plot the data for binary_seartch
 plt.figure()  # Create a new figure
@@ -87,7 +88,8 @@ plt.errorbar(N_binary_seartch, T_binary_seartch, yerr=Stdev_binary_seartch, fmt=
 plt.xlabel('N')
 plt.ylabel('Time [ms]')
 plt.title('binary search')
-plt.ylim(bottom=0)
+plt.ylim(-0.5)
+
 
 # Plot the data for binary_seartch_tree
 plt.figure()  # Create a new figure
@@ -95,7 +97,7 @@ plt.errorbar(N_binary_seartch_tree, T_binary_seartch_tree, yerr=Stdev_binary_sea
 plt.xlabel('N')
 plt.ylabel('Time [ms]')
 plt.title('binary search tree')
-plt.ylim(bottom=0)
+plt.ylim(-0.5)
 
 # Plot the data for hash_table
 plt.figure()  # Create a new figure
@@ -103,7 +105,7 @@ plt.errorbar(N_hash_table, T_hash_table, yerr=Stdev_hash_table, fmt='o-', ecolor
 plt.xlabel('N')
 plt.ylabel('Time [ms]')
 plt.title('hash table')
-plt.ylim(bottom=0)
+plt.ylim(-0.5)
 
 # Display all the graphs together
 plt.show()

@@ -7,6 +7,7 @@
 #include "Hash_table.h"
 #include "time_calc.h"
 #include <random>
+
 void sekvensiell_seartch_test(std::vector<int>&prime_vector, int target);
 void binary_seartch_test(std::vector<int>&prime_vector, int target);
 void BST_test(Node*root,int target);
@@ -111,6 +112,7 @@ int main() {
 
                 for(int i=0;i<sample;i++){
                     int target=generate_random_int(0,size_of_prime);
+
                     auto start = std::chrono::steady_clock::now();
                     BST_test(root,target);
                     auto end = std::chrono::steady_clock::now();
@@ -122,6 +124,7 @@ int main() {
                 time_vec.clear();
                 //time_vec.resize(size);
                 tries=tries + size_of_vec;
+
             }
             break;
 
@@ -195,7 +198,7 @@ std::cout<<"\n\nHash table:\n\n";
 }
 
 void sekvensiell_seartch_test(std::vector<int>&prime_vector, int target){
-    int index = bianary_search(prime_vector, target);
+    int index = sekvensiell_seartch(prime_vector, target);
     /*
     if (index != -1) {
         std::cout << "\n\nTarget element " << target << " found at index " << index <<"\n\n";

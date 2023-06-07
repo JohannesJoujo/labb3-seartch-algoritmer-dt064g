@@ -32,15 +32,3 @@ bool search(const std::vector<node*>& hashtable, int data, size_t size){
     }
     return false;
 }
-
-void display(const std::vector<node*>& hashtable, size_t size) {
-    for (size_t i = 0; i < size; i++) {
-        std::cout << "Slot " << i << ": ";
-        const node* curr = hashtable[i];
-        while (curr != nullptr) {
-            std::cout << curr->data << " -> ";
-            curr = curr->next;
-        }
-        std::cout << "nullptr" << std::endl;
-    }
-}
