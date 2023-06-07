@@ -17,7 +17,7 @@ void hash_test(const std::vector<node*>& hashtable, int data, size_t size);
 
 int main() {
     int sample=1000;
-    int size_of_vec=100000;
+    int size_of_vec=50000;
     std::vector<double> time_vec(0);
     std::vector<bool>vec(size_of_vec, true);
 /*
@@ -70,7 +70,7 @@ int main() {
                 }
                 avrage_avikelse= standardavvikelse(time_vec);
                 avrage_time= avg(time_vec);
-                file<<"a"<<"\t"<<vec.size()<<"\t"<<avrage_time<<"\t"<<avrage_avikelse<<"\t"<<sample<<"\n";
+                file<<"a"<<"\t"<<prime_vector.size()<<"\t"<<avrage_time<<"\t"<<avrage_avikelse<<"\t"<<sample<<"\n";
                 time_vec.clear();
                 //time_vec.resize(size);
                 tries=tries + size_of_vec;
@@ -93,7 +93,7 @@ int main() {
                 }
                 avrage_avikelse= standardavvikelse(time_vec);
                 avrage_time= avg(time_vec);
-                file<<"b"<<"\t"<<vec.size()<<"\t"<<avrage_time<<"\t"<<avrage_avikelse<<"\t"<<sample<<"\n";
+                file<<"b"<<"\t"<<prime_vector.size()<<"\t"<<avrage_time<<"\t"<<avrage_avikelse<<"\t"<<sample<<"\n";
                 time_vec.clear();
                 //time_vec.resize(size);
                 tries=tries + size_of_vec;
@@ -118,7 +118,7 @@ int main() {
                 }
                 avrage_avikelse= standardavvikelse(time_vec);
                 avrage_time= avg(time_vec);
-                file<<"c"<<"\t"<<vec.size()<<"\t"<<avrage_time<<"\t"<<avrage_avikelse<<"\t"<<sample<<"\n";
+                file<<"c"<<"\t"<<prime_vector.size()<<"\t"<<avrage_time<<"\t"<<avrage_avikelse<<"\t"<<sample<<"\n";
                 time_vec.clear();
                 //time_vec.resize(size);
                 tries=tries + size_of_vec;
@@ -132,7 +132,7 @@ int main() {
                 resize_vec(vec,tries);
                 auto prime_vector=prime_num(vec);
                 int size_of_prime=prime_vector.size();
-                size_t reserved_size = 17000;
+                size_t reserved_size = 35000;
                 std::vector<node*> hashtable(reserved_size, nullptr);
                 insertSortedVector(prime_vector, hashtable, reserved_size);
 
@@ -145,7 +145,7 @@ int main() {
                 }
                 avrage_avikelse= standardavvikelse(time_vec);
                 avrage_time= avg(time_vec);
-                file<<"d"<<"\t"<<vec.size()<<"\t"<<avrage_time<<"\t"<<avrage_avikelse<<"\t"<<sample<<"\n";
+                file<<"d"<<"\t"<<prime_vector.size()<<"\t"<<avrage_time<<"\t"<<avrage_avikelse<<"\t"<<sample<<"\n";
                 time_vec.clear();
                 //time_vec.resize(size);
                 free_mem(hashtable,reserved_size);
@@ -253,9 +253,7 @@ int generate_random_int(int min, int max) {
     std::random_device rd;  // Obtain a random number from the hardware
     std::mt19937 gen(rd()); // Seed the generator
 
-    // Define the distribution and range
     std::uniform_int_distribution<> dis(min, max);
 
-    // Generate and return a random integer
     return dis(gen);
 }
