@@ -23,7 +23,7 @@ void insertSortedVector(std::vector<int>& sortedVector, std::vector<node*>& hash
 
 bool search(const std::vector<node*>& hashtable, int data, size_t size){
     size_t index= hash(data,size);
-    const node* current_node= hashtable[index];
+    const node* current_node= hashtable[index]; //starting point of searching
     while(current_node!= nullptr){
         if(current_node->data==data){
             return true;
