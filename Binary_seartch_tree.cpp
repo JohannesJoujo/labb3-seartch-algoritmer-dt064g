@@ -27,14 +27,6 @@ Node* creat_BST(std::vector<int>&vec){
     return root;
 }
 
-void inordertreversal(Node*root){
-    if(root!= nullptr){
-        inordertreversal(root->left);
-        std::cout<<root->data<<" ";
-        inordertreversal(root->right);
-    }
-}
-
 Node* seartch_BST(Node*root,int target){
     if(root== nullptr || root->data==target){
         return root;

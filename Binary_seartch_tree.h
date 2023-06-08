@@ -9,6 +9,5 @@
 
 Node* insert(Node *root,int value);
 Node* creat_BST(std::vector<int>&vec);
-void inordertreversal(Node*root);
 Node* seartch_BST(Node*root,int target);
 #endif //SEARTCH_BINARY_SEARTCH_TREE_H
